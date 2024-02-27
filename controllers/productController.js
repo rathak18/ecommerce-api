@@ -64,7 +64,7 @@ const ProductController = {
       // Save the product to the database
       await newProduct.save();
 
-      res.status(201).json({ message: 'Product created successfully' });
+      res.status(201).json({ message: 'Product created successfully', product: newProduct });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -93,7 +93,7 @@ const ProductController = {
         return res.status(404).json({ message: 'Product not found' });
       }
 
-      res.status(200).json({ message: 'Product updated successfully' });
+      res.status(200).json({ message: 'Product updated successfully', product: updatedProduct });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -111,7 +111,7 @@ const ProductController = {
         return res.status(404).json({ message: 'Product not found' });
       }
 
-      res.status(200).json({ message: 'Product deleted successfully' });
+      res.status(200).json({ message: 'Product deleted successfully', product: deletedProduct });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });

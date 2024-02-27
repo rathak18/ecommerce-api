@@ -33,9 +33,9 @@ const UserController = {
       });
 
       // Save the user to the database
-      await newUser.save();
+      const user = await newUser.save();
 
-      res.status(201).json({ message: 'User registered successfully' });
+      res.status(201).json({ message: 'User registered successfully'});
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -67,7 +67,7 @@ const UserController = {
       // Generate JWT token
       const token = jwt.sign({ userId: user._id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
 
-      res.status(200).json({ token });
+      res.status(200).json({ message: 'Login successful', token });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -86,7 +86,7 @@ const UserController = {
         return res.status(404).json({ message: 'User not found' });
       }
 
-      res.status(200).json(userProfile);
+      res.status(200).json({ message: 'User profile retrieved successfully', userProfile });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });

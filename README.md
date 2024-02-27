@@ -7,7 +7,7 @@ Welcome to the E-commerce API project! This API is designed for managing product
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/ecommerce-api.git
+    git clone https://github.com/rathak18/ecommerce-api.git
     ```
 
 2. Navigate to the project directory:

@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# .env file
+.env
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# IDE
+.idea/
+
+# Compiled binary addons (Node-gyp)
+build/Release

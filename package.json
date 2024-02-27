@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-api",
+  "version": "1.0.0",
+  "description": "E-commerce API for product management, user accounts, and order processing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["node", "express", "mongodb", "ecommerce"],
+  "author": "Rajendra Pathak",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5",
+    "dotenv": "^10.0.0",
+    "morgan": "^1.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "bcrypt": "^5.0.1"
+  }
+}

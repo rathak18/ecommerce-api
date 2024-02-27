@@ -1,10 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const { PORT } = require('./config/dotenvConfig');
-const db = require('./config/db');
+const connectToDatabase = require('./config/db');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const orderRoutes = require('./routes/orderRoutes');
+const authenticateToken = require('./middleware/authMiddleware');
 
 const app = express();
 

@@ -1,5 +1,5 @@
 // controllers/orderController.js
-const OrderModel = require('../models/OrderModel');
+const OrderModel = require('../models/OrderModel.');
 const ProductModel = require('../models/ProductModel');
 const validateData = require('../middleware/validationMiddleware');
 

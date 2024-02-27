@@ -2,10 +2,10 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  username: String,
-  email: String,
-  password: String, // Hashed and salted password should be stored here
-  // Additional fields as needed
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  // Add any additional fields as needed for user data representation
 });
 
 const UserModel = mongoose.model('User', userSchema);

@@ -42,13 +42,12 @@ const ProductController = {
       res.status(500).json({ message: 'Internal Server Error' });
     }
   },
-
   createProduct: async (req, res) => {
     try {
-      const { name, description, price, stock } = req.body;
+      const { name, description, price, currency, stock } = req.body;
 
       // Validate data
-      const validation = validateData(req.body, ['name', 'description', 'price', 'stock']);
+      const validation = validateData(req.body, ['name', 'description', 'price', 'currency', 'stock']);
       if (!validation.isValid) {
         return res.status(400).json({ message: validation.message });
       }
@@ -57,7 +56,10 @@ const ProductController = {
       const newProduct = new ProductModel({
         name,
         description,
-        price,
+        price: {
+          amount: price,
+          currency,
+        },
         stock,
       });
 
